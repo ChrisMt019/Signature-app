@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "206631465514",
+    "project_id": "signatureapp-ea708",
+    "storage_bucket": "signatureapp-ea708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206631465514:android:546e2f9979f4b3a0f94953",
+        "android_client_info": {
+          "package_name": "com.example.signatureapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206631465514-koa3vkce7ihda8uu3uvmvbphceenl9f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr3EBIAM9kV8TcvsfyTcOUZFPJ_j97f8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206631465514-koa3vkce7ihda8uu3uvmvbphceenl9f7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

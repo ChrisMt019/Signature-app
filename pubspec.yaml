@@ -1,0 +1,40 @@
+name: signatureapp
+description: A new Flutter project.
+version: 1.0.0+1
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  signature: ^5.0.0
+  permission_handler: ^9.2.0
+  image_gallery_saver: ^1.7.1 
+  get: ^4.6.5
+  firebase_core: "^1.5.0"
+  firebase_storage: "^10.0.2"
+  timetable: ^1.0.0-alpha.8
+  image: ^3.2.0
+  flutter_native_splash: ^2.2.5
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+  
+assets:
+    - assets/images/logo.png
+    - assets/images/sign.png
+
+flutter_native_splash:
+  image: assets/images/logo.png
+  color: "25CFFE"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+    - assets/images/sign.png
+    
+  
