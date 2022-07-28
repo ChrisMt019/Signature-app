@@ -10,8 +10,8 @@ class PersonalDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _titleController = TextEditingController();
-    _titleController.text = details.firstName;
+
+    final _titleController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -22,8 +22,8 @@ class PersonalDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('FirstName'),
-            const Padding(
-              padding: EdgeInsets.all(30.0),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
               child: TextField(
                 controller: _titleController,
                 autofocus: true,
@@ -48,7 +48,7 @@ class PersonalDetails extends StatelessWidget {
                 'Next',
                 style: TextStyle(fontSize: 20.0),
               ),
-              onPressed: () {
+              onPressed: ()  {
                 details.firstName = _titleController.text;
                 Navigator.push(
                     context,

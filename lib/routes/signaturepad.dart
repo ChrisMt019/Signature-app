@@ -1,16 +1,20 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:get/get.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:signatureapp/models/sign-details.dart';
 
 class ReviewSignaturePage extends StatelessWidget {
+  final Details details;
   final Uint8List signature;
-  const ReviewSignaturePage({Key? key, required this.signature})
+  const ReviewSignaturePage({Key? key, required this.signature, required this.details})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+   
+
     var color = Color.fromARGB(255, 108, 189, 255);
     return Scaffold(
         backgroundColor: color,
@@ -24,7 +28,8 @@ class ReviewSignaturePage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () => saveSignature(context),
+              onPressed: () {()=> saveSignature(context);
+              },
               icon: const Icon(Icons.save),
             ),
           ],
@@ -37,8 +42,11 @@ class ReviewSignaturePage extends StatelessWidget {
   }
 
   Future? saveSignature(BuildContext context) async {
-    firebase_storage.FirebaseStorage storage =
-        firebase_storage.FirebaseStorage.instance;
+     FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+    await firestore.collection("Signatures").add(details.toJson());
+     Navigator.pop(context);
+      Get.snackbar('Success', 'Signature saved ');
 
 /*
     final status = await Permission.storage.status;
@@ -62,7 +70,7 @@ class ReviewSignaturePage extends StatelessWidget {
     } else {
       Get.snackbar('Success', 'Signature saved to device',
           backgroundColor: Colors.red, colorText: Colors.white);
-    }*/
+    }
     if (signature == null) return;
     const fileName = 'signature';
     final destination = 'files/$fileName';
@@ -72,10 +80,9 @@ class ReviewSignaturePage extends StatelessWidget {
           .ref(destination)
           .child('file/');
       await ref.putData(signature);
-      Navigator.pop(context);
-      Get.snackbar('Success', 'Signature saved ');
+     
     } catch (e) {
       print('error occured');
-    }
+    }*/
   }
 }

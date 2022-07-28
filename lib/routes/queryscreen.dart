@@ -13,7 +13,6 @@ class QueryScreen extends StatefulWidget {
 }
 
 class _QueryScreenState extends State<QueryScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -26,7 +25,8 @@ class _QueryScreenState extends State<QueryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final newSign = Details(null, null, null, null);
+    var logo1;
+    final newSign = Details('','','',logo1.png,);
     return Scaffold(
         appBar: AppBar(
           title: const Text('Welcome'),
@@ -54,7 +54,9 @@ class _QueryScreenState extends State<QueryScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const PersonalDetails(details: newSign,)),
+                      builder: (context) =>  PersonalDetails(
+                            details: newSign,
+                          )),
                 );
               },
             ),

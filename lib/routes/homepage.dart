@@ -1,10 +1,11 @@
+import 'dart:html';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:signature/signature.dart';
 import 'package:signatureapp/routes/signaturepad.dart';
+import 'package:signatureapp/models/sign-details.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,8 +39,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Sign'),
-        ),
+        title: const Text('Sign'),
+      ),
       body: Column(
         children: [
           Expanded(
@@ -113,14 +114,24 @@ class _HomePageState extends State<HomePage> {
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           IconButton(
               onPressed: () async {
+                var logo1;
+                var logo;
+                final newSign = Details(
+                  '',
+                  '',
+                  '',
+                  logo,
+                );
+
                 if (controller!.isNotEmpty) {
                   final signature = await exportSignature();
 
                   await Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: ((context) =>
-                          ReviewSignaturePage(signature: signature!)),
-                    ),
+                        builder: ((context) => ReviewSignaturePage(
+                              details: newSign, signature: logo,
+
+                            ))),
                   );
 
                   controller!.clear();
