@@ -7,14 +7,14 @@ import 'package:signature/signature.dart';
 import 'package:signatureapp/routes/signaturepad.dart';
 import 'package:signatureapp/models/sign-details.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeSignPage extends StatefulWidget {
+  const HomeSignPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeSignPage> createState() => _HomeSignPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeSignPageState extends State<HomeSignPage> {
   SignatureController? controller;
 
   @override

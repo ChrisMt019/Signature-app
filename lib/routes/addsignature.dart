@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:signatureapp/routes/homepage.dart';
+import 'package:signatureapp/routes/homesignpage.dart';
 
 class AddSignature extends StatefulWidget {
   const AddSignature({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class _AddSignatureState extends State<AddSignature> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => const HomeSignPage()),
                 );
               },
             ),
